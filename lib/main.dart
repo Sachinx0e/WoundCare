@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:woundcare/screen/HistoryPage.dart';
 import 'package:woundcare/screen/HomePage.dart';
 import 'package:woundcare/screen/Signup.dart';
 import 'package:woundcare/core/State.dart';
@@ -25,7 +26,6 @@ class MyApp extends StatelessWidget {
       },
       theme: new ThemeData(
         // This is the theme of your application.
-        //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           }else{
             return new Welcome();
           }**/
-          return new HomePage();
+          return new HistoryPage();
       }(),
     );
   }

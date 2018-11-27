@@ -172,25 +172,28 @@ class HomePageState extends State<HomePage> {
                   ),
               ),
 
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: HomePageIconButton(Icons.home, "Home",iconSize: 26.0,)
-                    ),
-                    Expanded(
-                        child: HomePageIconButton(Icons.local_hospital, "My Health", iconSize: 25.0,)
-                    ),
-                    Expanded(
-                        child: HomePageIconButton(Icons.calendar_today, "Appointments", iconSize: 25.0,)
-                    ),
-                    Expanded(
-                        child: HomePageIconButton(Icons.receipt, "History", iconSize: 25.0,)
-                    ),
-                    Expanded(
-                        child: HomePageIconButton(Icons.person, "Profile")
-                    ),
-                  ],
+              SafeArea(
+                top: false,
+                child: Container(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                          child: HomePageIconButton(Icons.home, "Home",iconSize: 26.0,)
+                      ),
+                      Expanded(
+                          child: HomePageIconButton(Icons.local_hospital, "My Health", iconSize: 25.0,)
+                      ),
+                      Expanded(
+                          child: HomePageIconButton(Icons.calendar_today, "Appointments", iconSize: 25.0,)
+                      ),
+                      Expanded(
+                          child: HomePageIconButton(Icons.receipt, "History", iconSize: 25.0,)
+                      ),
+                      Expanded(
+                          child: HomePageIconButton(Icons.person, "Profile")
+                      ),
+                    ],
+                  ),
                 ),
               )
 

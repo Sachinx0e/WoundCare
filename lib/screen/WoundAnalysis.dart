@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:woundcare/components/PageHeader.dart';
 import 'package:woundcare/misc/Colors.dart';
 
 class WoundAnalysis extends StatelessWidget {
@@ -9,55 +10,7 @@ class WoundAnalysis extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          SizedBox(
-            width: double.infinity,
-            height: 80.0,
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter, // 10% of the width, so there are ten blinds.
-                  colors: [AppColors.hexToColor("#3867B4"), AppColors.hexToColor("#148FB4")], // whitish to gray
-                  tileMode: TileMode.mirror, // repeats the gradient over the canvas
-                ),
-              ),
-              child: Padding(
-                  padding: EdgeInsets.only(left: 00.0),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        width: double.infinity,
-                        height: 24.0,
-                        child: Container(
-
-                        ),
-                      ),
-                      Row(
-                        children: <Widget>[
-                          IconButton(
-                            icon: Icon(Icons.arrow_back),
-                            color: Colors.white,
-                            onPressed: (){},
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                                left: 10.0
-                            ),
-                            child: Text(
-                                "Wound analysis result",
-                                style: TextStyle(
-                                    fontSize: 20.0,
-                                    color: Colors.white
-                                )
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
-                  )
-              )
-            ),
-          ),
+          PageHeader(title:"Wound analysis result"),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
