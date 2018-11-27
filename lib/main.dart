@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:woundcare/screen/AppointmentPage.dart';
 import 'package:woundcare/screen/HistoryPage.dart';
 import 'package:woundcare/screen/HomePage.dart';
 import 'package:woundcare/screen/Signup.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
           }else{
             return new Welcome();
           }**/
-          return new HistoryPage();
+          return new AppointmentPage();
       }(),
     );
   }
