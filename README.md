@@ -1,6 +1,6 @@
 # woundcare
 
-A n application to analyze wounds
+A mobile application to analyze and track the progress of wounds
 
 ## Getting Started
 
