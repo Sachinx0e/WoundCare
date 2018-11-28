@@ -3,9 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:woundcare/screen/AppointmentPage.dart';
 import 'package:woundcare/screen/HistoryPage.dart';
 import 'package:woundcare/screen/HomePage.dart';
+import 'package:woundcare/screen/NewAppointmentPage.dart';
 import 'package:woundcare/screen/Signup.dart';
-import 'package:woundcare/core/State.dart';
-import 'package:woundcare/screen/WoundAnalysis.dart';
 
 void main() {
   //debugPaintSizeEnabled=true;
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
           }else{
             return new Welcome();
           }**/
-          return new AppointmentPage();
+          return new NewAppointmentPage();
       }(),
     );
   }
