@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class InputField extends StatelessWidget{
   String label;
   String hintText;
+  var onChanged;
 
 
-  InputField({String label="", String hintText=""}){
+  InputField({String label="", String hintText="", var onChanged=null}){
     this.label = label;
     this.hintText = hintText;
+    this.onChanged = onChanged;
   }
 
   @override
@@ -43,6 +45,11 @@ class InputField extends StatelessWidget{
               style: TextStyle(
                   color: Colors.white
               ),
+              onChanged: (value){
+                if(this.onChanged != null) {
+                  this.onChanged(value);
+                }
+              },
             )
           ],
         ),

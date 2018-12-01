@@ -28,6 +28,10 @@ class MyApp extends StatelessWidget {
 
         "/signup" : (context) {
           return new SignupPage();
+        },
+
+        "/home_page" : (context) {
+          return new HomePage();
         }
 
       },
