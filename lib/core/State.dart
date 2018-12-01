@@ -1,7 +1,7 @@
 class AppState {
   static final AppState _singleton = new AppState._internal();
 
-  bool _isLoggedIn = true;
+  bool _isLoggedIn = false;
 
   factory AppState() {
     return _singleton;
@@ -15,6 +15,10 @@ class AppState {
 
   bool isLoggedIn() {
     return _isLoggedIn;
+  }
+
+  bool setIsLoggedIn(bool isLoggedIn) {
+    _isLoggedIn = isLoggedIn;
   }
 
 }

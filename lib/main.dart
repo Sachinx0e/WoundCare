@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:woundcare/core/State.dart';
 import 'package:woundcare/screen/AppointmentPage.dart';
 import 'package:woundcare/screen/HistoryPage.dart';
 import 'package:woundcare/screen/HomePage.dart';
@@ -22,8 +23,12 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/welcome" : (context) {
-            new Welcome();
+           return new Welcome();
         },
+
+        "/signup" : (context) {
+          return new SignupPage();
+        }
 
       },
       theme: new ThemeData(
@@ -37,12 +42,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: (){
-          /**if(AppState.getInstance().isLoggedIn()){
+          if(AppState.getInstance().isLoggedIn()){
             return new HomePage();
           }else{
             return new Welcome();
-          }**/
-          return new SignupPage();
+          }
       }(),
     );
   }

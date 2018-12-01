@@ -20,37 +20,42 @@ class SignupPage extends StatelessWidget{
         ),
         constraints: BoxConstraints.expand(),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
+          child: SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
 
-              InputField(label: "MOBILE NUMBER", hintText: "Enter mobile number"),
-              InputField(label: "EMAIL", hintText: "Enter email address"),
-              InputField(label: "CREATE PASSWORD", hintText: "password"),
-              InputField(label: "CONFIRM PASSWORD", hintText: "password"),
+                  InputField(label: "MOBILE NUMBER", hintText: "Enter mobile number"),
+                  InputField(label: "EMAIL", hintText: "Enter email address"),
+                  InputField(label: "CREATE PASSWORD", hintText: "password"),
+                  InputField(label: "CONFIRM PASSWORD", hintText: "password"),
 
 
-              Container(
-                margin: EdgeInsets.only(top: 50.0,left: 20.0, right: 20.0),
-                child: RaisedButton(
-                  color: Colors.white,
-                  shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 15.0, bottom: 15.0,left: 50.0, right: 50.0),
-                    child: Text(
-                      "SIGNUP",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: AppColors.SIGNUP_FACEBOOK_BUTTON_COLOR()
+                  Container(
+                    margin: EdgeInsets.only(top: 50.0,left: 20.0, right: 20.0),
+                    child: RaisedButton(
+                      color: Colors.white,
+                      shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 15.0, bottom: 15.0,left: 50.0, right: 50.0),
+                        child: Text(
+                          "SIGNUP",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: AppColors.SIGNUP_FACEBOOK_BUTTON_COLOR()
+                          ),
+                        ),
                       ),
+                      onPressed: () {},
                     ),
                   ),
-                  onPressed: () {},
-                ),
-              ),
 
-            ],
+                ],
+              )
+            ),
           ),
         ),
       ),

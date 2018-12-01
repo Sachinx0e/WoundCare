@@ -104,7 +104,9 @@ class _WelcomeState extends State<Welcome> {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context,"/signup");
+                        },
                       ),
 
                       //Connect button
