@@ -101,7 +101,7 @@ class SignupPageState extends State<SignupPage> {
                               request_state = RequestState.IN_PROGRESS;
                               new Timer(new Duration(seconds: 6),(){
                                 AppState.getInstance().setIsLoggedIn(true);
-                                Navigator.pushNamed(context, "/home_page");
+                                Navigator.pushNamed(context, "/app_page");
                               });
                             });
                           }

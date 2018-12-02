@@ -16,11 +16,12 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
 
+  int selectedOption;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      body: Center(
+    return Center(
           child: Column(
             children: <Widget>[
               SizedBox(
@@ -45,8 +46,10 @@ class HomePageState extends State<HomePage> {
                           height: 80.0,
                           child: Container(
                             decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white
+                                image: DecorationImage(
+                                    image: AssetImage("assets/patient.png"),
+                                    fit: BoxFit.fill
+                                )
                             ),
                           ),
                         ),
@@ -111,33 +114,42 @@ class HomePageState extends State<HomePage> {
 
               //sections
               Expanded(
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    HomePageInfo(),
-                    HomePageInfo()
-                  ]
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                  child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        HomePageInfo(image_name: "assets/heart.svg",label: "Heart Rate", count: "56"),
+                        HomePageInfo(image_name: "assets/pulse.svg",label: "Blood Pressure",count: "120/80"),
+                      ]
+                  )
                 )
               ),
 
               Expanded(
-                  child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: <Widget>[
-                        HomePageInfo(),
-                        HomePageInfo()
-                      ]
-                  )
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          HomePageInfo(image_name: "assets/height.svg",label: "Height",count: "5’7’’ft"),
+                          HomePageInfo(image_name: "assets/weight.svg",label: "Weight",count: "135 lb"),
+                        ]
+                    )
+                  ),
               ),
 
               Expanded(
-                  child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: <Widget>[
-                        HomePageInfo(),
-                        HomePageInfo()
-                      ]
-                  )
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                    child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          HomePageInfo(image_name: "assets/pulse.svg",label: "Pulse Rate",count: "72"),
+                          HomePageInfo(image_name: "assets/kcal.svg",label: "Calories",count: "1800"),
+                        ]
+                    )
+                  ),
               ),
 
               Expanded(
@@ -152,8 +164,8 @@ class HomePageState extends State<HomePage> {
                                 child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: <Widget>[
-                                      HomePageOption(),
-                                      HomePageOption(),
+                                      HomePageOption(image: "assets/message.svg", label: "Message"),
+                                      HomePageOption(image: "assets/notification.svg", label: "Notification"),
                                     ]
                                 )
                             ),
@@ -161,8 +173,8 @@ class HomePageState extends State<HomePage> {
                                 child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: <Widget>[
-                                      HomePageOption(),
-                                      HomePageOption(),
+                                      HomePageOption(image: "assets/camera.svg", label: "Wound analysis"),
+                                      HomePageOption(image: "assets/blog.svg", label: "Blog"),
                                     ]
                                 )
                             ),
@@ -172,34 +184,10 @@ class HomePageState extends State<HomePage> {
                   ),
               ),
 
-              SafeArea(
-                top: false,
-                child: Container(
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                          child: HomePageIconButton(Icons.home, "Home",iconSize: 26.0,)
-                      ),
-                      Expanded(
-                          child: HomePageIconButton(Icons.local_hospital, "My Health", iconSize: 25.0,)
-                      ),
-                      Expanded(
-                          child: HomePageIconButton(Icons.calendar_today, "Appointments", iconSize: 25.0,)
-                      ),
-                      Expanded(
-                          child: HomePageIconButton(Icons.receipt, "History", iconSize: 25.0,)
-                      ),
-                      Expanded(
-                          child: HomePageIconButton(Icons.person, "Profile")
-                      ),
-                    ],
-                  ),
-                ),
-              )
+
 
             ],
-          ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 

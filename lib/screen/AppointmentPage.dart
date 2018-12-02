@@ -20,7 +20,7 @@ class AppointmentPageState extends State<AppointmentPage> {
           color: Colors.white,
           child: Column(
             children: <Widget>[
-              PageHeader(title: "Appointments"),
+              PageHeader(title: "Appointments",showBack: false),
               Expanded(
                 child: SafeArea(
                     top: false,

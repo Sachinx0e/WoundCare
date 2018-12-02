@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:woundcare/core/State.dart';
-import 'package:woundcare/screen/AppointmentPage.dart';
-import 'package:woundcare/screen/HistoryPage.dart';
-import 'package:woundcare/screen/HomePage.dart';
-import 'package:woundcare/screen/LoginPage.dart';
-import 'package:woundcare/screen/NewAppointmentPage.dart';
+import 'package:woundcare/screen/AppPage.dart';
 import 'package:woundcare/screen/SignupPage.dart';
 import 'package:woundcare/screen/Welcome.dart';
+import 'package:woundcare/screen/WoundAnalysis.dart';
 
 void main() {
   //debugPaintSizeEnabled=true;
@@ -30,8 +26,8 @@ class MyApp extends StatelessWidget {
           return new SignupPage();
         },
 
-        "/home_page" : (context) {
-          return new HomePage();
+        "/app_page" : (context) {
+          return new AppPage();
         }
 
       },
@@ -47,9 +43,9 @@ class MyApp extends StatelessWidget {
       ),
       home: (){
           if(AppState.getInstance().isLoggedIn()){
-            return new HomePage();
+            return new AppPage();
           }else{
-            return new Welcome();
+            return new AppPage();
           }
       }(),
     );

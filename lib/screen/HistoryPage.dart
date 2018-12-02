@@ -23,7 +23,7 @@ class HistoryPageState extends State<HistoryPage> {
         color: Colors.white,
         child: Column(
           children: <Widget>[
-            PageHeader(title: "History"),
+            PageHeader(title: "History", showBack: false,),
             Expanded(
               child: SafeArea(
                   top: false,

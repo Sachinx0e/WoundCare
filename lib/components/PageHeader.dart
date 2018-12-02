@@ -3,9 +3,11 @@ import 'package:woundcare/misc/Colors.dart';
 
 class PageHeader extends StatelessWidget{
   String title;
+  bool showBack;
 
-  PageHeader({String title=""}){
+  PageHeader({String title="", bool showBack=true}){
     this.title = title;
+    this.showBack = showBack;
   }
 
   @override
@@ -29,11 +31,20 @@ class PageHeader extends StatelessWidget{
                   children: <Widget>[
                     Row(
                       children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.arrow_back),
-                          color: Colors.white,
-                          onPressed: (){},
-                        ),
+                        (){
+                          if(showBack){
+                            return IconButton(
+                              icon: Icon(Icons.arrow_back),
+                              color: Colors.white,
+                              onPressed: (){},
+                            );
+                          }else{
+                            return SizedBox(
+                              height: 48,
+                              width: 0,
+                            );
+                          }
+                        }(),
                         Padding(
                           padding: EdgeInsets.only(
                               left: 10.0
