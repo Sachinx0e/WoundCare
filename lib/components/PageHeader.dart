@@ -4,10 +4,12 @@ import 'package:woundcare/misc/Colors.dart';
 class PageHeader extends StatelessWidget{
   String title;
   bool showBack;
+  var backPressed;
 
-  PageHeader({String title="", bool showBack=true}){
+  PageHeader({String title="", bool showBack=true, var backPressed}){
     this.title = title;
     this.showBack = showBack;
+    this.backPressed = backPressed;
   }
 
   @override
@@ -36,7 +38,11 @@ class PageHeader extends StatelessWidget{
                             return IconButton(
                               icon: Icon(Icons.arrow_back),
                               color: Colors.white,
-                              onPressed: (){},
+                              onPressed: (){
+                                if(this.backPressed != null){
+                                  this.backPressed();
+                                }
+                              },
                             );
                           }else{
                             return SizedBox(

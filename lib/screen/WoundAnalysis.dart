@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:woundcare/components/HomePageIconButton.dart';
 import 'package:woundcare/components/PageHeader.dart';
 import 'package:woundcare/misc/Colors.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -20,11 +19,11 @@ class WoundAnalysis extends StatefulWidget {
 
   static List<charts.Series<GaugeSegment, String>> _createSampleData() {
     final data = [
-      new GaugeSegment('Red', get_random_value(),charts.Color.fromHex(code: "#ff00009e")),
-      new GaugeSegment('Brown', get_random_value(),charts.Color.fromHex(code: "#8a1b089e")),
+      new GaugeSegment('Red', get_random_value(),charts.Color.fromHex(code: "#ff5a5aff")),
+      new GaugeSegment('Brown', get_random_value(),charts.Color.fromHex(code: "#8D6E63")),
       new GaugeSegment('Yellow', get_random_value(),charts.Color.fromHex(code: "#cbca009e")),
-      new GaugeSegment('Green', get_random_value(),charts.Color.fromHex(code: "#09a5569e")),
-      new GaugeSegment('Black', get_random_value(),charts.Color.fromHex(code: "#0108059e")),
+      new GaugeSegment('Green', get_random_value(),charts.Color.fromHex(code: "#59ba89ff")),
+      new GaugeSegment('Black', get_random_value(),charts.Color.fromHex(code: "#4d4d4dff")),
     ];
 
     return [

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:woundcare/core/State.dart';
 import 'package:woundcare/screen/AppPage.dart';
+import 'package:woundcare/screen/NewAppointmentPage.dart';
 import 'package:woundcare/screen/SignupPage.dart';
 import 'package:woundcare/screen/Welcome.dart';
 import 'package:woundcare/screen/WoundAnalysis.dart';
@@ -28,6 +30,10 @@ class MyApp extends StatelessWidget {
 
         "/app_page" : (context) {
           return new AppPage();
+        },
+
+        "new_appointment" : (context) {
+          return new NewAppointmentPage();
         }
 
       },
