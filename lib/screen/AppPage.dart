@@ -23,10 +23,12 @@ class AppPageState extends State<AppPage> {
   int selectedOption;
   PageController pageController;
 
+
   AppPageState(){
     this.pageController = PageController(
       keepPage: true
     );
+    this.selectedOption = 0;
   }
 
   @override

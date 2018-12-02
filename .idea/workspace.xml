@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77ba5376-9eec-4620-a233-7d2cb0874437" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/PageHeader.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/PageHeader.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/AppointmentPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/AppointmentPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/HistoryPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/HistoryPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/NewAppointmentPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/NewAppointmentPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screen/WoundAnalysis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/WoundAnalysis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/HomePageOption.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/HomePageOption.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screen/AppPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screen/AppPage.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -42,11 +37,32 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HistoryPage.dart" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AppPage.dart" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/screen/AppPage.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="578">
+                  <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HomePageOption.dart" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/components/HomePageOption.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HistoryPage.dart" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/screen/HistoryPage.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="633">
-                  <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+                <state relative-caret-position="225">
+                  <caret line="83" column="50" selection-start-line="83" selection-start-column="50" selection-end-line="83" selection-end-column="50" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
                   </folding>
@@ -134,18 +150,18 @@
         <option value="$PROJECT_DIR$/lib/screen/Welcome.dart" />
         <option value="$PROJECT_DIR$/lib/components/InputField.dart" />
         <option value="$PROJECT_DIR$/lib/components/HomePageInfo.dart" />
-        <option value="$PROJECT_DIR$/lib/components/HomePageOption.dart" />
         <option value="$PROJECT_DIR$/lib/components/HomePageIconButton.dart" />
         <option value="$PROJECT_DIR$/lib/screen/SignupPage.dart" />
         <option value="$PROJECT_DIR$/lib/screen/HomePage.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/lib/screen/AppPage.dart" />
         <option value="$PROJECT_DIR$/lib/screen/WoundAnalysis.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/components/PageHeader.dart" />
         <option value="$PROJECT_DIR$/lib/screen/NewAppointmentPage.dart" />
         <option value="$PROJECT_DIR$/lib/screen/AppointmentPage.dart" />
         <option value="$PROJECT_DIR$/lib/screen/HistoryPage.dart" />
+        <option value="$PROJECT_DIR$/lib/screen/AppPage.dart" />
+        <option value="$PROJECT_DIR$/lib/components/HomePageOption.dart" />
       </list>
     </option>
   </component>
@@ -321,11 +337,11 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.2768139" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.2768139" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3280757" />
       <window_info id="Captures" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10082547" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10082547" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Flutter Inspector" order="3" />
@@ -615,16 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/components/HomePageOption.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/components/HomePageIconButton.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -683,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/screen/AppPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="42" column="37" lean-forward="true" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -721,16 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/screen/NewAppointmentPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/screen/WoundAnalysis.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -743,10 +732,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/screen/HistoryPage.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+        <state relative-caret-position="225">
+          <caret line="83" column="50" selection-start-line="83" selection-start-column="50" selection-end-line="83" selection-end-column="50" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/screen/NewAppointmentPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/screen/AppPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/components/HomePageOption.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
