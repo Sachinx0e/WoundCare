@@ -1,9 +1,12 @@
+import 'dart:async';
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:woundcare/components/PageHeader.dart';
 import 'package:woundcare/misc/Colors.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:image_picker/image_picker.dart';
 
 class WoundAnalysis extends StatefulWidget {
 
@@ -59,7 +62,8 @@ class GaugeSegment {
 
 class WoundAnalysisState extends State<WoundAnalysis> {
 
-  AnalysisState analysisState = AnalysisState.ANALYSIS_COMPLETE;
+  AnalysisState analysisState = AnalysisState.NO_IMAGE_SELECTED;
+  File selectedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -129,12 +133,31 @@ class WoundAnalysisState extends State<WoundAnalysis> {
                       child: Container()
                     ),
 
-                    Text(
-                      "Oct 29, 2018 17:10 PM",
-                      style: TextStyle(
-                          color: AppColors.hexToColor("#5B5B5B")
-                      ),
-                    ),
+                    (){
+                      if(analysisState == AnalysisState.NO_IMAGE_SELECTED){
+                        return Text(
+                          "No image selected",
+                          style: TextStyle(
+                              color: AppColors.hexToColor("#5B5B5B")
+                          ),
+                        );
+                      }else if(analysisState == AnalysisState.IN_PROGRESS) {
+                        return Text(
+                          "Analyzing image",
+                          style: TextStyle(
+                              color: AppColors.hexToColor("#5B5B5B")
+                          ),
+                        );
+                      }else if(analysisState == AnalysisState.ANALYSIS_COMPLETE) {
+                        return Text(
+                          "22 mm^2",
+                          style: TextStyle(
+                              color: AppColors.hexToColor("#5B5B5B")
+                          ),
+                        );
+                      }
+                    }(),
+
 
                   ],
                 ),
@@ -166,7 +189,25 @@ class WoundAnalysisState extends State<WoundAnalysis> {
                   )
                 );
               }else if(analysisState == AnalysisState.IN_PROGRESS) {
-                return Container();
+                return Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(bottom: 10.0),
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(AppColors.hexToColor("#148FB4")),
+                          ),
+                        ),
+                        Text(
+                          "Analyzing image",
+                          style: TextStyle(
+                              color: Colors.grey
+                          ),
+                        ),
+                    ],
+                  ),
+                );
               }else if(analysisState == AnalysisState.ANALYSIS_COMPLETE) {
                 return Container(
                   margin: EdgeInsets.only(top: 50.0),
@@ -219,7 +260,21 @@ class WoundAnalysisState extends State<WoundAnalysis> {
 
                               ],
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              getImage(ImageSource.camera).then((value){
+                                setState(() {
+                                  analysisState = AnalysisState.IN_PROGRESS;
+                                  selectedImage = value;
+                                });
+
+                                new Timer(new Duration(seconds: 6),(){
+                                  setState(() {
+                                    analysisState = AnalysisState.ANALYSIS_COMPLETE;
+                                  });
+                                });
+
+                              });
+                            },
                           ),
                         ),
                       ),
@@ -247,7 +302,21 @@ class WoundAnalysisState extends State<WoundAnalysis> {
 
                               ],
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              getImage(ImageSource.gallery).then((value){
+                                setState(() {
+                                  analysisState = AnalysisState.IN_PROGRESS;
+                                  selectedImage = value;
+                                });
+
+                                new Timer(new Duration(seconds: 6),(){
+                                  setState(() {
+                                    analysisState = AnalysisState.ANALYSIS_COMPLETE;
+                                  });
+                                });
+
+                              });
+                            },
                           ),
                         ),
                       ),
@@ -311,7 +380,12 @@ class WoundAnalysisState extends State<WoundAnalysis> {
 
                               ],
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                analysisState = AnalysisState.NO_IMAGE_SELECTED;
+                                selectedImage = null;
+                              });
+                            },
                           ),
                         ),
                       ),
@@ -325,6 +399,11 @@ class WoundAnalysisState extends State<WoundAnalysis> {
         ],
       ),
     );
+  }
+
+  Future getImage(ImageSource imageSource) async {
+    var image = await ImagePicker.pickImage(source: imageSource);
+    return image;
   }
 
 }
