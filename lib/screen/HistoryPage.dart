@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:woundcare/components/PageHeader.dart';
 import 'package:woundcare/misc/Colors.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -69,6 +70,7 @@ class HistoryPageState extends State<HistoryPage> {
                   child: ListView.builder(
                     itemCount: 30,
                     itemBuilder: (BuildContext context, int index) {
+                      DateTime date = DateTime.now().subtract(Duration(days: index, minutes: Random().nextInt(60)));
                       return Card(
                         margin: EdgeInsets.only(bottom: 20.0,left: 10.0, right: 10.0),
                         child: InkWell(
@@ -89,7 +91,7 @@ class HistoryPageState extends State<HistoryPage> {
                                         Padding(
                                           padding: EdgeInsets.only(bottom: 0.0),
                                           child: Text(
-                                            "24",
+                                            date.day.toString(),
                                             style: TextStyle(
                                                 fontSize: 28.0
                                             ),
@@ -99,7 +101,7 @@ class HistoryPageState extends State<HistoryPage> {
                                         Padding(
                                           padding: EdgeInsets.only(bottom: 2.0),
                                           child: Text(
-                                            "Dec",
+                                            DateFormat.MMM("en_US").format(date),
                                             style: TextStyle(
                                                 color: AppColors.hexToColor("#6a6a6aff"),
                                                 fontSize: 16.0
@@ -108,7 +110,7 @@ class HistoryPageState extends State<HistoryPage> {
                                         ),
 
                                         Text(
-                                          "9:15 AM",
+                                          DateFormat.jm("en_US").format(date),
                                           style: TextStyle(
                                               fontSize: 10.0
                                           ),

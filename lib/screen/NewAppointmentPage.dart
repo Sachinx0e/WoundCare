@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart' show CalendarCarousel;
 import 'package:intl/intl.dart';
 import 'package:woundcare/components/PageHeader.dart';
+import 'package:woundcare/dialogs/AppointmentConfirmationDialog.dart';
 import 'package:woundcare/misc/Colors.dart';
 
 class NewAppointmentPage extends StatefulWidget {
@@ -17,9 +20,13 @@ class NewAppointmentPage extends StatefulWidget {
 class NewAppointmentPageState extends State<NewAppointmentPage> {
 
   DateTime selectedDate;
+  List<int> selectedAppointment;
+  int numAppointments;
 
   NewAppointmentPageState(){
     this.selectedDate = DateTime.now();
+    selectedAppointment = [];
+    numAppointments = Random().nextInt(5);
   }
 
   @override
@@ -45,6 +52,8 @@ class NewAppointmentPageState extends State<NewAppointmentPage> {
                     onDayPressed: (DateTime date) {
                         this.setState((){
                           selectedDate = date;
+                          selectedAppointment = [];
+                          numAppointments = Random().nextInt(5);
                         });
                     },
                     todayButtonColor: Colors.lightBlueAccent,
@@ -98,17 +107,29 @@ class NewAppointmentPageState extends State<NewAppointmentPage> {
                                 mainAxisSpacing: 5.0,
                                 crossAxisSpacing: 5.0
                             ),
+                            itemCount: numAppointments,
                             itemBuilder: (BuildContext context, int index){
+                              DateTime date = selectedDate.add(Duration(minutes: index * 15));
                               return Card(
                                 child: InkWell(
                                     onTap: (){
+                                      _showDialog(context,date,index,(index){this.setState((){
+                                        selectedAppointment = new List<int>.from(selectedAppointment)..add(index);
+                                      });});
                                     },
                                     child: Container(
+                                        color: (){
+                                          if(selectedAppointment.contains(index)){
+                                            return AppColors.hexToColor("#FFFBD5");
+                                          }else{
+                                            return Colors.white;
+                                          }
+                                        }(),
                                         child: Padding(
                                           padding: EdgeInsets.only(left: 10.0, right: 10.0 ),
                                           child: Center(
                                             child: Text(
-                                              "9:15 PM ",
+                                              DateFormat.jm("en_US").format(date),
                                               style: TextStyle(
                                                   fontSize: 16.0
                                               ),
@@ -128,6 +149,15 @@ class NewAppointmentPageState extends State<NewAppointmentPage> {
             )
         ),
       ),
+    );
+  }
+
+  static _showDialog(BuildContext context,DateTime date,int index, var callback){
+    showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return AppointmentConfirmationDialog(date,index, callback);
+        }
     );
   }
 

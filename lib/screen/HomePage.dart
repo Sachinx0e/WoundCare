@@ -5,18 +5,33 @@ import 'package:woundcare/components/HomePageOption.dart';
 import 'package:woundcare/misc/Colors.dart';
 
 class HomePage extends StatefulWidget {
+  var woundAnalysClick;
+
+  HomePage({var woundAnalysisClick}){
+    this.woundAnalysClick = woundAnalysisClick;
+  }
 
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return HomePageState();
+    return HomePageState(this.woundAnalysClick);
   }
 
 }
 
 class HomePageState extends State<HomePage> {
-
   int selectedOption;
+  var woundAnalysClick;
+
+
+  HomePageState(var woundAnalysisClick){
+    this.woundAnalysClick = (){
+      woundAnalysisClick();
+      this.setState((){
+        selectedOption = 1;
+      });
+    };
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +188,7 @@ class HomePageState extends State<HomePage> {
                                 child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: <Widget>[
-                                      HomePageOption(image: "assets/camera.svg", label: "Wound analysis"),
+                                      HomePageOption(image: "assets/camera.svg", label: "Wound analysis",onClick:woundAnalysClick),
                                       HomePageOption(image: "assets/blog.svg", label: "Blog"),
                                     ]
                                 )

@@ -48,7 +48,10 @@ class AppPageState extends State<AppPage> {
                     });
                   },
                   children: <Widget>[
-                    HomePage(),
+                    HomePage(woundAnalysisClick: (){setState(() {
+                      selectedOption = 1;
+                      this.pageController.jumpToPage(selectedOption);
+                    });}),
                     WoundAnalysis(),
                     AppointmentPage(),
                     HistoryPage(),

@@ -1,5 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:woundcare/components/PageHeader.dart';
+import 'package:woundcare/dialogs/AppointmentDialog.dart';
 import 'package:woundcare/misc/Colors.dart';
 
 class AppointmentPage extends StatefulWidget {
@@ -46,10 +50,14 @@ class AppointmentPageState extends State<AppointmentPage> {
                                   mainAxisSpacing: 5.0,
                                   crossAxisSpacing: 5.0
                               ),
+                              itemCount: 5,
                               itemBuilder: (BuildContext context, int index){
+                                DateTime date = DateTime.now().add(Duration(days: index,minutes: Random().nextInt(60)));
                                 return Card(
                                     child: InkWell(
-                                      onTap: (){},
+                                      onTap: (){
+                                        _showDialog(context,date);
+                                      },
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 00.0, right: 0.0, top: 10.0, bottom: 0.0 ),
                                         child: Column(
@@ -66,7 +74,7 @@ class AppointmentPageState extends State<AppointmentPage> {
                                                       Padding(
                                                         padding: EdgeInsets.only(bottom: 5.0),
                                                         child: Text(
-                                                          "24",
+                                                          date.day.toString(),
                                                           style: TextStyle(
                                                               fontSize: 40.0
                                                           ),
@@ -74,7 +82,7 @@ class AppointmentPageState extends State<AppointmentPage> {
                                                       ),
 
                                                       Text(
-                                                        "Dec",
+                                                        DateFormat.MMM("en_US").format(date),
                                                         style: TextStyle(
                                                             color: AppColors.hexToColor("#6a6a6aff"),
                                                             fontSize: 16.0
@@ -102,7 +110,7 @@ class AppointmentPageState extends State<AppointmentPage> {
                                               flex: 2,
                                               child: Center(
                                                 child: Text(
-                                                  "9:15 AM",
+                                                  DateFormat.jm("en_US").format(date),
                                                   style: TextStyle(
                                                       fontSize: 14.0
                                                   ),
@@ -124,6 +132,15 @@ class AppointmentPageState extends State<AppointmentPage> {
             ],
           ),
         )
+    );
+  }
+
+  static _showDialog(BuildContext context, DateTime date){
+    showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return AppointmentDialog(date);
+        }
     );
   }
 

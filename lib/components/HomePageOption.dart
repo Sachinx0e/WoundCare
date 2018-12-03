@@ -5,10 +5,12 @@ import 'package:woundcare/misc/Colors.dart';
 class HomePageOption extends StatelessWidget {
   String image;
   String label;
+  var onClick;
 
-  HomePageOption({String image="", String label=""}){
+  HomePageOption({String image="", String label="", var onClick}){
     this.image = image;
     this.label = label;
+    this.onClick = onClick;
   }
 
   @override
@@ -21,7 +23,11 @@ class HomePageOption extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(5.0))
           ),
           child: InkWell(
-              onTap: (){},
+              onTap: (){
+                if(onClick != null){
+                  onClick();
+                }
+              },
               child: Column (
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
