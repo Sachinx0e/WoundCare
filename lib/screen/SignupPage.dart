@@ -58,12 +58,12 @@ class SignupPageState extends State<SignupPage> {
                           email = value;
                         });
                     }),
-                    InputField(label: "CREATE PASSWORD", hintText: "password", onChanged: (value){
+                    InputField(label: "CREATE PASSWORD", isPassword: true, hintText: "password", onChanged: (value){
                       setState(() {
                         password = value;
                       });
-                    }),
-                    InputField(label: "CONFIRM PASSWORD", hintText: "password",onChanged: (value){
+                    },),
+                    InputField(label: "CONFIRM PASSWORD", isPassword: true,hintText: "password",onChanged: (value){
                       setState(() {
                         confirm_password = value;
                       });

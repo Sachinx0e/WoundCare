@@ -4,12 +4,14 @@ class InputField extends StatelessWidget{
   String label;
   String hintText;
   var onChanged;
+  bool isPassword;
 
 
-  InputField({String label="", String hintText="", var onChanged=null}){
+  InputField({String label="", String hintText="", var onChanged=null, bool isPassword=false}){
     this.label = label;
     this.hintText = hintText;
     this.onChanged = onChanged;
+    this.isPassword = isPassword;
   }
 
   @override
@@ -35,6 +37,7 @@ class InputField extends StatelessWidget{
             ),
             TextField(
               textAlign: TextAlign.center,
+              obscureText: isPassword,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: this.hintText,

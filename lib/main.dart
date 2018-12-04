@@ -48,11 +48,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: (){
-          if(AppState.getInstance().isLoggedIn()){
-            return new AppPage();
-          }else{
-            return new AppPage();
-          }
+          return new Welcome();
       }(),
     );
   }
