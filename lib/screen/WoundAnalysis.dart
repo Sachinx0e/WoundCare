@@ -209,9 +209,12 @@ class WoundAnalysisState extends State<WoundAnalysis> {
                   ),
                 );
               }else if(analysisState == AnalysisState.ANALYSIS_COMPLETE) {
-                return Container(
-                  margin: EdgeInsets.only(top: 50.0),
-                  child: charts.PieChart(WoundAnalysis._createSampleData(),
+                return SizedBox(
+                  width: 330,
+                  height: 200,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 50.0,left: 20,right:20.0),
+                    child: charts.PieChart(WoundAnalysis._createSampleData(),
                       animate: true,
                       // Configure the width of the pie slices to 30px. The remaining space in
                       // the chart will be left as a hole in the center. Adjust the start
@@ -223,7 +226,8 @@ class WoundAnalysisState extends State<WoundAnalysis> {
                           arcRendererDecorators : [new charts.ArcLabelDecorator()]
                       ),
 
-                  ) ,
+                    ) ,
+                  ),
                 );
               }else{
                 return Container();
