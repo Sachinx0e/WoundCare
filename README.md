@@ -7,7 +7,7 @@ OS - Ubuntu 18.04 LTS
 Flutter - 1.12.8
 
 # Getting started
-'''
+```
 # install packages
 flutter pub get
 
@@ -17,4 +17,4 @@ flutter run
 # create release build
 flutter build --apk --release
 
-'''
+```
